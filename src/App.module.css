@@ -11,5 +11,6 @@
 @media (max-width: 768px) {
     .modalContent {
         width: 100%;
+        left: 0;
     }
 }
