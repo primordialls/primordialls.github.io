@@ -8,10 +8,10 @@ import styles from './Chat.module.css';
 const Chat = () => {
   const [messages, setMessages] = useState([{ text: "What can I do for you? ", isUser: false }]);
   const [input, setInput] = useState('');
-  const model = new ChatOpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    model: "gpt-4"
-  });
+  // const model = new ChatOpenAI({
+  //   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+  //   model: "gpt-4"
+  // });
 
   const promptTemplate = ChatPromptTemplate.fromMessages([
     ["system", "Act like a super drunk assistant that still wants to be helpful"],
@@ -22,16 +22,16 @@ const Chat = () => {
     if (input.trim()) {
       setInput('');
       setMessages([{ text: "Let me think...", isUser: false}, { text: input, isUser: true}, ...messages]);
-      const promptValue = await promptTemplate.invoke({
-        text: input,
-      });
-      const response = await model.invoke(promptValue);
-      // if (response.status !== 201 && response.status !== 200) {
-      //   const data = await response.json()
-      //   alert(data.message)
-      // }
-      // else {
-        setMessages([{text: response.content, isUser: false}, { text: input, isUser: true}, ...messages]);
+      // const promptValue = await promptTemplate.invoke({
+      //   text: input,
+      // });
+      // const response = await model.invoke(promptValue);
+      // // if (response.status !== 201 && response.status !== 200) {
+      // //   const data = await response.json()
+      // //   alert(data.message)
+      // // }
+      // // else {
+      //   setMessages([{text: response.content, isUser: false}, { text: input, isUser: true}, ...messages]);
       // }
     }
   };
