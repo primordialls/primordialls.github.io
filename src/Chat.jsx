@@ -43,28 +43,30 @@ const Chat = () => {
     <div className={styles.chatContainer}>
       <div className={styles.messagesContainer}>
         {messages.map((message, index) => (
-            // {!message.isUser && (
-            //   <img
-            //     src="/src/assets/place.jpeg"
-            //     alt="profile"
-            //     className={styles.profileImage} 
-            //   />
-            // )}
-            <div key={index} className={`${styles.message} ${message.isUser ? '' : styles.ai}`}>
+          <div key={index} className={`${styles.messageContainer} ${message.isUser ? '' : styles.ai}`}>
+            {!message.isUser && (
+              <img
+                src="/src/assets/place.png"
+                alt="profile"
+                className={styles.profileImage}
+              />
+            )}
+            <div className={styles.message}>
               {message.text}
               {message.image && <img src={message.image} alt="message attachment" className={styles.messageImage} />}
+            </div>
           </div>
         ))}
         <div className={`${styles.spacer}`}></div>
       </div>
       <div className={styles.inputContainer}>
         <input
-          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyPress}
           className={styles.input}
           placeholder='Explain it to me...'
+          maxLength={60}
         />
         <button onClick={handleSend} className={styles.sendButton}>
           Send
