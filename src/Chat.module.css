@@ -12,6 +12,12 @@
   padding: 10px;
 }
 
+.messageWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 .message {
   background-color: var(--main-color);
   border-radius: 10px;

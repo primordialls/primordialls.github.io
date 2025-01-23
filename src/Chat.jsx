@@ -8,10 +8,10 @@ import styles from './Chat.module.css';
 const Chat = () => {
   const [messages, setMessages] = useState([{ text: "What can I do for you? ", isUser: false }]);
   const [input, setInput] = useState('');
-  // const model = new ChatOpenAI({
-  //   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  //   model: "gpt-4"
-  // });
+  const model = new ChatOpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    model: "gpt-4"
+  });
 
   const promptTemplate = ChatPromptTemplate.fromMessages([
     ["system", "Act like a super drunk assistant that still wants to be helpful"],
@@ -22,16 +22,16 @@ const Chat = () => {
     if (input.trim()) {
       setInput('');
       setMessages([{ text: "Let me think...", isUser: false}, { text: input, isUser: true}, ...messages]);
-      // const promptValue = await promptTemplate.invoke({
-      //   text: input,
-      // });
-      // const response = await model.invoke(promptValue);
-      // // if (response.status !== 201 && response.status !== 200) {
-      // //   const data = await response.json()
-      // //   alert(data.message)
-      // // }
-      // // else {
-      //   setMessages([{text: response.content, isUser: false}, { text: input, isUser: true}, ...messages]);
+      const promptValue = await promptTemplate.invoke({
+        text: input,
+      });
+      const response = await model.invoke(promptValue);
+      // if (response.status !== 201 && response.status !== 200) {
+      //   const data = await response.json()
+      //   alert(data.message)
+      // }
+      // else {
+        setMessages([{text: response.content, isUser: false}, { text: input, isUser: true}, ...messages]);
       // }
     }
   };
@@ -49,9 +49,18 @@ const Chat = () => {
     <div className={styles.chatContainer}>
       <div className={styles.messagesContainer}>
         {messages.map((message, index) => (
-          <div key={index} className={`${styles.message} ${message.isUser ? '' : styles.ai}`}>
-            {message.text}
-            {message.image && <img src={message.image} alt="message attachment" className={styles.messageImage} />}
+          <div className={styles.messageWrap}>
+            {!message.isUser && (
+              <img
+                src="./assets/place.jpeg"
+                alt="profile"
+                className={styles.profileImage} 
+              />
+            )}
+            <div key={index} className={`${styles.message} ${message.isUser ? '' : styles.ai}`}>
+              {message.text}
+              {message.image && <img src={message.image} alt="message attachment" className={styles.messageImage} />}
+            </div>
           </div>
         ))}
         <div className={`${styles.spacer}`}></div>
