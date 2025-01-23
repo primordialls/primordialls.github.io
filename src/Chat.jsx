@@ -11,7 +11,7 @@ const Chat = () => {
       setInput('');
       setMessages([{ text: "Let me think...", isUser: false}, { text: input, isUser: true}, ...messages]);
 
-      const response = await fetch('/api', {
+      const response = await fetch('https://dkkq5s6pnrgihvccdsam66dz3q0tbxmw.lambda-url.us-east-1.on.aws/ ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

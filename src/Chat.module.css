@@ -20,7 +20,8 @@
 }
 
 .message {
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 1);
   padding: 10px;
@@ -94,6 +95,7 @@
   padding-left: 20px;
   background-color: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  caret-color: black;
 }
 
 .input::placeholder {
@@ -118,7 +120,21 @@
   font-size: large;
 }
 
-.sendButton:hover {
-  background-color: rgba(0, 0, 0, 1);
-  color: var(--main-color);
+@media (min-width: 769px) {
+  .sendButton:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: var(--main-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .sendButton {
+    background-color: transparent;
+    color: black;
+  }
+
+  .sendButton:active {
+    background-color: rgba(0, 0, 0, 1);
+    color: var(--main-color);
+  }
 }
