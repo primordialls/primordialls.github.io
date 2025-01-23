@@ -23,7 +23,7 @@ jobs:
 
     - name: Build the project
       env:
-        VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }} # Inject your environment variable
+        VITE_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Inject your environment variable
       run: npm run build
 
     - name: Deploy to GitHub Pages
