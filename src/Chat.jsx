@@ -3,7 +3,7 @@ import { useState } from 'react'
 import styles from './Chat.module.css';
 
 const Chat = () => {
-  const [messages, setMessages] = useState([{ text: "What can I do for you? ", isUser: false }]);
+  const [messages, setMessages] = useState([{ text: "What can I do? ", isUser: false }]);
   const [input, setInput] = useState('');
   
   const handleSend = async () => {
