@@ -47,7 +47,7 @@ const Chat = () => {
           <div key={index} className={`${styles.messageContainer} ${message.isUser ? '' : styles.ai}`}>
             {!message.isUser && (
               <img
-                src="/public/place.png"
+                src="/place.png"
                 alt="profile"
                 className={styles.profileImage}
                 id='profileImage'
