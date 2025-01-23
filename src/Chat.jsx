@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 import { useState } from 'react'
-import styles from './Chat.module.css';
+import styles from './Chat.module.css'
+
 
 const Chat = () => {
   const [messages, setMessages] = useState([{ text: "What can I do? ", isUser: false }]);
@@ -46,9 +47,10 @@ const Chat = () => {
           <div key={index} className={`${styles.messageContainer} ${message.isUser ? '' : styles.ai}`}>
             {!message.isUser && (
               <img
-                src="/src/assets/place.png"
+                src="/public/place.png"
                 alt="profile"
                 className={styles.profileImage}
+                id='profileImage'
               />
             )}
             <div className={styles.message}>
