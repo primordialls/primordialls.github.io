@@ -22,17 +22,20 @@ function App() {
     <>
       {isMobile && (
         <>
-        <button className={styles.menuButton} onClick={() => setIsLinksOpen(prev => !prev)}>
+        {!isProfOpen && <button className={`${styles.menuButton} ${isLinksOpen ? styles.active : ``}`} onClick={() => setIsLinksOpen(prev => !prev)}>
           {isLinksOpen ? '❌' : '🔗'}
-        </button>
-        <button className={`${styles.menuButton} ${styles.prof}`} onClick={() => setIsProfOpen(prev => !prev)}>
+        </button>}
+        {!isLinksOpen && <button className={`${styles.menuButton} ${styles.prof} ${isProfOpen ? styles.active : ``}`} onClick={() => setIsProfOpen(prev => !prev)}>
           {isProfOpen ? '❌' : '👤'}
-        </button>
+        </button>}
         </>
       )}
       <div className={`${styles.profile} ${isProfOpen ? styles.open : ``}`}>
         <img src="splash.png" alt="Elia Doehler" className={styles.profileImage}/>
-        <h1>Hi! My name is Elia</h1>
+        <h1>Elia Döhler</h1>
+        <h2>Software Engineer</h2>
+        <hr />
+        <p>Bees without knees</p>
       </div>
       <div className={`${styles.links} ${isLinksOpen ? styles.open : ``}`}>
         <NavigationButton

@@ -21,7 +21,7 @@
 
 @media (max-width: 768px) {
   .navigationButton {
-    background-color: var(--main-color);
+    background-color: transparent;
     color: black;
   }
 
