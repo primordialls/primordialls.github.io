@@ -4,7 +4,7 @@ import styles from './Chat.module.css'
 
 
 const Chat = () => {
-  const [messages, setMessages] = useState([{ text: "What can I do? ", isUser: false }]);
+  const [messages, setMessages] = useState([{ text: "Hello! What would you like to know?", isUser: false }]);
   const [input, setInput] = useState('');
   
   const handleSend = async () => {

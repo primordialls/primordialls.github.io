@@ -6,11 +6,127 @@
     height: 100%;
     box-sizing: border-box;
     box-shadow: 0 0 0 3px black;
+    z-index: 1;
+}
+
+.menuButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 30px;
+}
+
+.menuButton.prof {
+    right: auto;
+    left: 0;
+}
+
+
+
+.links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: var(--main-color);
+    z-index: 0;
+    transition: right 0.2s ease, z-index 0.2s ease;
+}
+
+.profile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    background-color: var(--main-color);
+    z-index: 0;
+    transition: left 0.2s ease, z-index 0.2s ease;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color : black;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.profileImage {
+    width: 75%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 3px solid black;
+}
+
+@media (min-width: 768px) {
+    .menuButton:hover {
+        background-color: rgba(0, 0, 0, 1);
+        color: var(--main-color);
+    }
 }
 
 @media (max-width: 768px) {
+    .menuButton {
+        background-color: var(--main-color);
+        color: black;
+    }
+
+    .menuButton:active {
+        background-color: rgba(0, 0, 0, 1);
+        color: var(--main-color);
+    }
+
     .modalContent {
         width: 100%;
+        left: 0;
+    }
+    .links {
+        width: 100%;
+        right: -100%;
+        z-index: 2;
+    }
+    .links.open {
+        right: 0;
+    }
+    .profile {
+        width: 100%;
+        left: -100%;
+        z-index: 2;
+    }
+    .profile.open {
         left: 0;
     }
 }

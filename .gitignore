@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 lambda-function
+upsert.py
+.venv
+context.txt
 
 # Editor directories and files
 .vscode/*
