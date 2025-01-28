@@ -4,6 +4,22 @@
   height: 100%;
 }
 
+.chatContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    var(--main-color) 50px,
+    transparent 100px
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
 .messagesContainer {
   display: flex;
   flex-direction: column-reverse;
