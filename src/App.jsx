@@ -36,6 +36,8 @@ function App() {
         <h2>Software Engineer</h2>
         <hr />
         <p>Use the chat to find out cool things about me!</p>
+        <hr />
+        <p>Click the links to the right to see my LinkedIn, GitHub, or Resumé!</p>
       </div>
       <div className={`${styles.links} ${isLinksOpen ? styles.open : ``}`}>
         <NavigationButton

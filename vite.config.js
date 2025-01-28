@@ -5,7 +5,7 @@ import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
 export default defineConfig({
   plugins: [
     react(),
-    vitePluginFaviconsInject('./src/logo.png')
+    vitePluginFaviconsInject('./src/logo.png'),
   ],
   build: {
     rollupOptions: {
