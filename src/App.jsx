@@ -35,7 +35,7 @@ function App() {
         <h1>Elia Döhler</h1>
         <h2>Software Engineer</h2>
         <hr />
-        <p>Bees without knees</p>
+        <p>Use the chat to find out cool things about me!</p>
       </div>
       <div className={`${styles.links} ${isLinksOpen ? styles.open : ``}`}>
         <NavigationButton
