@@ -17,7 +17,10 @@ const Chat = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ body: input.trim()}),
+        body: JSON.stringify({
+          message: input.trim(),
+          history: messages.map((message) => message.text).reverse()
+        }),
       });
 
       if (response.status !== 201 && response.status !== 200) {
@@ -25,6 +28,7 @@ const Chat = () => {
         alert(data.message)
       }
       else {
+        console.log(response);
         const data = await response.json();
         setMessages([{text: data, isUser: false}, { text: input, isUser: true}, ...messages]);
       }
