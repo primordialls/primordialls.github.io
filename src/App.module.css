@@ -36,13 +36,13 @@
 .menuButton.prof.active {
     left: 50%;
     transform: translateX(-50%);
-    top: 3px;
+    top: 10px;
 }
 
 .menuButton.active {
     right: 50%;
     transform: translateX(50%);
-    top: 3px;
+    top: 10px;
 }
 
 .links {
@@ -54,7 +54,7 @@
     font-size: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     background-color: var(--main-color);
     z-index: 0;
     transition: right 0.2s ease, z-index 0.2s ease;
@@ -69,7 +69,7 @@
     font-size: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     background-color: var(--main-color);
     z-index: 0;
@@ -157,6 +157,7 @@ p {
         width: 100%;
         right: -100%;
         z-index: 2;
+        justify-content: end;
     }
     .links.open {
         right: 0;
