@@ -71,7 +71,7 @@ const Chat = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyPress}
           className={styles.input}
-          placeholder='Explain it to me...'
+          placeholder='Ask me anything...'
           maxLength={60}
         />
         <button onClick={handleSend} className={styles.sendButton}>
