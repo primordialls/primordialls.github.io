@@ -129,6 +129,12 @@ p {
     }
 }
 
+@media (max-height: 768px) {
+    .profileImage {
+        width: 50%;
+    }
+}
+
 @media (max-width: 768px) {
     .menuButton {
         background-color: transparent;
