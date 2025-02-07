@@ -41,7 +41,7 @@ function App() {
         <hr />
         <NavigationButton
           text="Repo for this page"
-          onClick={() => window.open('https://github.com/primordialls')}
+          onClick={() => window.open('https://github.com/primordialls/primordialls.github.io')}
           repo={true}
         />
       </div>
