@@ -38,6 +38,12 @@ function App() {
         <p>Use the chat to find out cool things about me!</p>
         <hr />
         <p>Click the links to the right to see my LinkedIn, GitHub, or Resumé!</p>
+        <hr />
+        <NavigationButton
+          text="Repo for this page"
+          onClick={() => window.open('https://github.com/primordialls')}
+          repo={true}
+        />
       </div>
       <div className={`${styles.links} ${isLinksOpen ? styles.open : ``}`}>
         <NavigationButton

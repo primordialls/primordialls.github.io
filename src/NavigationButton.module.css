@@ -12,6 +12,14 @@
   height: 15%;
 }
 
+.repo {
+  font-size: 30px;
+  height: 5%;
+  width: 75%;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
 @media (min-width: 768px) {
   .navigationButton:hover {
     background-color: rgba(0, 0, 0, 1);
