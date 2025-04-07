@@ -9,6 +9,10 @@ const Chat = () => {
   
   const handleSend = async () => {
     if (input.trim()) {
+      if (input==="shapewithsae") {
+        window.location.href = '/shap-e_with_SAE';
+        return;
+      }
       setInput('');
       setMessages([{ text: "Let me think...", isUser: false}, { text: input, isUser: true}, ...messages]);
 
@@ -18,7 +22,7 @@ const Chat = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: input.trim(),
+          message: input.trim().substring(0, 200),
           history: messages.map((message) => message.text).reverse()
         }),
       });
