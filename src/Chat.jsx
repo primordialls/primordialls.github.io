@@ -3,9 +3,8 @@ import { useState } from 'react'
 import styles from './Chat.module.css'
 
 
-const Chat = () => {
+const Chat = ({input, setInput}) => {
   const [messages, setMessages] = useState([{ text: "Hello! What would you like to know?", isUser: false }]);
-  const [input, setInput] = useState('');
   
   const handleSend = async () => {
     if (input.trim()) {

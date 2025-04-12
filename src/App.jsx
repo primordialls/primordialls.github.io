@@ -6,6 +6,7 @@ import { NavigationButton } from './NavigationButton.jsx';
 function App() {
   const [isLinksOpen, setIsLinksOpen] = useState(false);
   const [isProfOpen, setIsProfOpen] = useState(false);
+  const [input, setInput] = useState('');
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -17,6 +18,22 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const openResume = () => {
+    if (input.trim() === "resume2") {
+      setInput('');
+      window.open('Elia_Doehler2.pdf');
+    }
+    else if (input.trim() === "resume3") {
+      setInput('');
+      window.open('Elia_Doehler3.pdf');
+    }
+    else {
+      setInput('');
+      window.open('Elia_Doehler.pdf');
+    }
+    
+  };
 
   return (
     <>
@@ -56,11 +73,11 @@ function App() {
         />
         <NavigationButton
           text="Resumé"
-          onClick={() => window.open('Elia_Doehler2.pdf')}
+          onClick={() => openResume()}
         />
       </div>
       <div className={`${styles.modalContent}`}>
-        <Chat />
+        <Chat input={input} setInput={setInput}/>
       </div>
     </>
   )
